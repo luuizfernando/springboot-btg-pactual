@@ -1,5 +1,7 @@
 package com.project.btgpactual.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +29,10 @@ public class OrderController {
     )
     {
         var pageResponse = service.findAllByCustomerId(customerId, PageRequest.of(page, pageSize));
+        var totalOnOrders = service.getTotalByCustomerId(customerId);
 
         return ResponseEntity.ok(new ApiResponse<>(
+            Map.of("total", totalOnOrders),
             pageResponse.getContent(),
             PaginationResponse.fromPage(pageResponse)
         ));
