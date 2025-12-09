@@ -1,4 +1,4 @@
-package com.project.btgpactual.service;
+package com.project.btgpactual.domain.orders.dto;
 
 
 import java.util.List;

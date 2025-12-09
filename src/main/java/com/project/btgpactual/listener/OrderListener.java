@@ -6,7 +6,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 import static com.project.btgpactual.config.RabbitMQ.ORDER_CREATED_QUEUE;
-import com.project.btgpactual.service.OrderCreatedEvent;
+import com.project.btgpactual.domain.orders.dto.OrderCreatedEvent;
 import com.project.btgpactual.service.OrderService;
 
 @Component
